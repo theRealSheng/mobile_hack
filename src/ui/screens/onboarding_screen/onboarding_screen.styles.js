@@ -1,7 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { Colors, Size } from 'ui/styles';
+import { Size } from 'ui/styles';
 
 export default StyleSheet.create({
+  linearGradient: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     paddingTop: 60,
@@ -24,7 +27,7 @@ export default StyleSheet.create({
     fontFamily: 'RobotoSlab-Medium',
   },
   roomOwner: {
-    marginTop: 10,
-    marginBottom: 15,
+    marginTop: 5,
+    marginBottom: 10,
   },
 });

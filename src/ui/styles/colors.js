@@ -1,6 +1,7 @@
 const Colors = {
   primary: '#C0FF82',
-  secondary: 'blue',
+  primaryLight: '#E5FAC9',
+  secondary: '#5891FF',
   tertiary: 'red',
   white: 'white',
   error: 'red',
