@@ -20,7 +20,6 @@ export default StyleSheet.create({
   },
   cardContentContainer: {
     justifyContent: 'center',
-
     flex: 1,
   },
   cardTitle: {

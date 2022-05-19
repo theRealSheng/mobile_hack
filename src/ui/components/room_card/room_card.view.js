@@ -1,13 +1,34 @@
 import React, { memo } from 'react';
 import { View, Text } from 'react-native';
 import Person1 from '../../../../assets/svg/person_1.svg';
+import Person2 from '../../../../assets/svg/person_2.svg';
+import Person3 from '../../../../assets/svg/person_3.svg';
+import Person4 from '../../../../assets/svg/person_4.svg';
+
 import { RoundedButton } from '../buttons/rounded_button/rounded_button.view';
 import styles from './room_card.styles';
+import Plus from '../../../../assets/svg/plus.svg';
+import NextArrow from '../../../../assets/svg/next_arrow.svg';
 
-const RoomCard = memo(({ onPress, title }) => {
+const RoomCard = memo(({ onPress, title, children, btnType }) => {
+  const BTN_MAPPER = {
+    plus: <Plus />,
+    next: <NextArrow />,
+  };
+
+  const PEOPLE_MAPPER = [
+    <Person1 width={100} />,
+    <Person2 width={100} />,
+    <Person3 width={100} />,
+    <Person4 width={100} />,
+  ];
+
+  const selectRandomPerson = () =>
+    PEOPLE_MAPPER[Math.floor(Math.random() * PEOPLE_MAPPER.length)];
+
   return (
     <View style={styles.roomBlock}>
-      <Person1 style={styles.cardImage} />
+      {selectRandomPerson()}
       <View style={[styles.card, { transform: [{ skewX: '-15deg' }] }]}>
         <View
           style={[
@@ -15,11 +36,14 @@ const RoomCard = memo(({ onPress, title }) => {
             { transform: [{ skewX: '15deg' }] },
           ]}>
           {title && <Text style={styles.cardTitle}>{title}</Text>}
-          <View style={styles.buttonContainer}>
-            <RoundedButton onPress={onPress}>
-              <Text>+</Text>
-            </RoundedButton>
-          </View>
+          {children}
+          {btnType && (
+            <View style={styles.buttonContainer}>
+              <RoundedButton onPress={onPress}>
+                {BTN_MAPPER[btnType]}
+              </RoundedButton>
+            </View>
+          )}
         </View>
       </View>
     </View>
