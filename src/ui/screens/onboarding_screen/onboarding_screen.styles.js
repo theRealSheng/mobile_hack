@@ -30,4 +30,14 @@ export default StyleSheet.create({
     marginTop: 5,
     marginBottom: 10,
   },
+  selectTimeText: {
+    marginBottom: 20,
+  },
+  timeChipsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  submitButtonContainer: {
+    marginTop: 40,
+  },
 });

@@ -4,16 +4,24 @@ import { View, Text } from 'react-native';
 import { TrapezoidModal } from '../../components/trapezoid_modal';
 import { RoomCard } from '../../components/room_card';
 import { Chip } from '../../components/chip';
+import { InputText } from '../../components/inputs/input_text';
+import { InputSelect } from '../../components/inputs/input_select';
+import { SquareButton } from '../../components/buttons/square_button';
 
 import LinearGradient from 'react-native-linear-gradient';
-import { Colors, Size } from 'ui/styles';
+import { Colors } from 'ui/styles';
 
 import styles from './onboarding_screen.styles';
 
-import mockData from './onboarding_screen.data.json';
+import {
+  joinersMockData,
+  roomsMockData,
+  timeChips,
+} from './onboarding_screen.data';
 
 const OnboardingScreenView = memo(() => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [newRoomData, setNewRoomData] = useState({});
 
   return (
     <LinearGradient
@@ -27,7 +35,47 @@ const OnboardingScreenView = memo(() => {
           title={'Create room'}
           hasBackBtn={true}
           onClose={() => setIsOpenModal(false)}>
-          <Text style={styles.modalText}>Hello World!</Text>
+          <View style={styles.createRoomInputsConatiner}>
+            <InputText
+              onChange={value =>
+                setNewRoomData({ ...newRoomData, roomName: value })
+              }
+              value={newRoomData.roomName}
+              placeholder="Choose a name for the room"
+            />
+            <InputText
+              onChange={value =>
+                setNewRoomData({ ...newRoomData, name: value })
+              }
+              value={newRoomData.name}
+              placeholder="Enter your name"
+            />
+            <InputSelect
+              onChange={value =>
+                setNewRoomData({ ...newRoomData, joiners: value })
+              }
+              value={newRoomData.joiners}
+              placeholder="Select a joiner"
+              options={joinersMockData}
+            />
+            <Text style={styles.selectTimeText}>Set a time for the room</Text>
+            <View style={styles.timeChipsContainer}>
+              {timeChips.map(chip => (
+                <Chip
+                  text={chip}
+                  onPress={value =>
+                    setNewRoomData({ ...newRoomData, time: value })
+                  }
+                />
+              ))}
+            </View>
+          </View>
+          <View style={styles.submitButtonContainer}>
+            <SquareButton
+              text="Create"
+              onPress={() => console.warn('newRoomData', newRoomData)}
+            />
+          </View>
         </TrapezoidModal>
         <Text style={styles.onboardingTitle}>Be the master!</Text>
         <RoomCard
@@ -36,7 +84,7 @@ const OnboardingScreenView = memo(() => {
           btnType="plus"
         />
         <Text style={styles.onboardingTitle}>Enjoy with others!</Text>
-        {mockData.map(({ name, owner, time, id }) => (
+        {roomsMockData.map(({ name, owner, time, id }) => (
           <RoomCard
             onPress={() => console.warn('id', id)}
             title={name}

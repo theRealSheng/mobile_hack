@@ -13,9 +13,11 @@ export const styles = StyleSheet.create({
   },
   contentContainer: {
     backgroundColor: Colors.white,
-    height: '80%',
+    height: '70%',
     position: 'relative',
     top: -80,
+    paddingRight: 50,
+    paddingLeft: 50,
   },
   backArrowButton: {
     position: 'absolute',
