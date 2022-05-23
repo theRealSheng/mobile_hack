@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
 import styles from './chip.styles';
 
@@ -18,5 +19,10 @@ const Chip = memo(({ text, onPress }) => {
     );
   }
 });
+
+Chip.propTypes = {
+  onPress: PropTypes.func,
+  text: PropTypes.string.isRequired,
+};
 
 export { Chip };

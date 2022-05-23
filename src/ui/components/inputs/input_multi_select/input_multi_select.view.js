@@ -1,10 +1,11 @@
-import React, { memo, useState, useRef, useEffect } from 'react';
+import React, { memo, useRef } from 'react';
 import MultiSelect from 'react-native-multiple-select';
 import { View } from 'react-native';
 import { Colors } from 'ui/styles';
-import styles from './input_select.styles';
+import styles from './input_multi_select.styles';
+import PropTypes from 'prop-types';
 
-const InputSelect = memo(({ onChange, value, placeholder, options }) => {
+const InputMultiSelect = memo(({ onChange, value, placeholder, options }) => {
   const multiSelectRef = useRef(null);
   return (
     <View style={styles.multipleSelect}>
@@ -32,4 +33,16 @@ const InputSelect = memo(({ onChange, value, placeholder, options }) => {
   );
 });
 
-export { InputSelect };
+InputMultiSelect.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
+export { InputMultiSelect };

@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { TextInput } from 'react-native';
+import PropTypes from 'prop-types';
 
 import styles from './input_text.styles';
 
@@ -16,5 +17,12 @@ const InputText = memo(
     );
   },
 );
+
+InputText.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  keyboardType: PropTypes.string.isRequired,
+};
 
 export { InputText };

@@ -17,6 +17,18 @@ const roomsMockData = [
     owner: 'Irene',
     time: '1,5 min',
   },
+  {
+    id: 4,
+    name: 'Top room',
+    owner: 'Sheng',
+    time: '1 min',
+  },
+  {
+    id: 5,
+    name: 'Hype room',
+    owner: 'Irene',
+    time: '1,5 min',
+  },
 ];
 
 const joinersMockData = [

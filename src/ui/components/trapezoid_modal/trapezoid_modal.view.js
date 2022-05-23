@@ -3,16 +3,10 @@ import { View, Modal, TouchableOpacity, Text } from 'react-native';
 import BackArrow from '../../../../assets/svg/back_arrow.svg';
 
 import { styles } from './trapezoid_modal.styles';
+import PropTypes from 'prop-types';
 
 const TrapezoidModal = memo(
-  ({
-    isOpen = false,
-    children,
-    hasBackBtn = false,
-    title,
-    color = 'red',
-    onClose,
-  }) => {
+  ({ isOpen = false, children, hasBackBtn = false, title, onClose }) => {
     return (
       <>
         <Modal animationType="slide" transparent={true} visible={isOpen}>
@@ -40,5 +34,13 @@ const TrapezoidModal = memo(
     );
   },
 );
+
+TrapezoidModal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node,
+  hasBackBtn: PropTypes.bool,
+  isOpen: PropTypes.bool,
+};
 
 export { TrapezoidModal };

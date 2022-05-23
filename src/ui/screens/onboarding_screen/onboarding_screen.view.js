@@ -1,13 +1,11 @@
 import React, { memo, useState } from 'react';
-import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import { TrapezoidModal } from '../../components/trapezoid_modal';
 import { RoomCard } from '../../components/room_card';
 import { Chip } from '../../components/chip';
 import { InputText } from '../../components/inputs/input_text';
-import { InputSelect } from '../../components/inputs/input_select';
+import { InputMultiSelect } from '../../components/inputs/input_multi_select';
 import { SquareButton } from '../../components/buttons/square_button';
-
 import LinearGradient from 'react-native-linear-gradient';
 import { Colors } from 'ui/styles';
 
@@ -25,7 +23,13 @@ const OnboardingScreenView = memo(() => {
 
   return (
     <LinearGradient
-      colors={['#ECFEDC', '#E5EFFA', '#E5EFFA', Colors.white, '#ECFEDC']}
+      colors={[
+        Colors.primaryLight,
+        Colors.secondaryLight,
+        Colors.secondaryLight,
+        Colors.white,
+        Colors.primaryLight,
+      ]}
       start={{ x: 1.2, y: 0.7 }}
       end={{ x: 0.7, y: 0 }}
       style={styles.linearGradient}>
@@ -35,7 +39,7 @@ const OnboardingScreenView = memo(() => {
           title={'Create room'}
           hasBackBtn={true}
           onClose={() => setIsOpenModal(false)}>
-          <View style={styles.createRoomInputsConatiner}>
+          <View style={styles.createRoomInputsContainer}>
             <InputText
               onChange={value =>
                 setNewRoomData({ ...newRoomData, roomName: value })
@@ -50,7 +54,7 @@ const OnboardingScreenView = memo(() => {
               value={newRoomData.name}
               placeholder="Enter your name"
             />
-            <InputSelect
+            <InputMultiSelect
               onChange={value =>
                 setNewRoomData({ ...newRoomData, joiners: value })
               }
@@ -84,15 +88,19 @@ const OnboardingScreenView = memo(() => {
           btnType="plus"
         />
         <Text style={styles.onboardingTitle}>Enjoy with others!</Text>
-        {roomsMockData.map(({ name, owner, time, id }) => (
-          <RoomCard
-            onPress={() => console.warn('id', id)}
-            title={name}
-            btnType="next">
-            <Text style={styles.roomOwner}>{owner}</Text>
-            <Chip text={time} />
-          </RoomCard>
-        ))}
+        <FlatList
+          data={roomsMockData}
+          renderItem={({ item }) => (
+            <RoomCard
+              onPress={() => console.warn('id', item.id)}
+              title={item.name}
+              btnType="next">
+              <Text style={styles.roomOwner}>{item.owner}</Text>
+              <Chip text={item.time} />
+            </RoomCard>
+          )}
+          keyExtractor={item => item.id}
+        />
       </View>
     </LinearGradient>
   );

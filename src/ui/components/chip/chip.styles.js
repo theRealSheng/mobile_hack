@@ -11,5 +11,4 @@ export default StyleSheet.create({
     borderRadius: 20,
     alignSelf: 'flex-start',
   },
-  chipText: {},
 });

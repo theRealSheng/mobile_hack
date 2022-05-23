@@ -10,6 +10,8 @@ import styles from './room_card.styles';
 import Plus from '../../../../assets/svg/plus.svg';
 import NextArrow from '../../../../assets/svg/next_arrow.svg';
 
+import PropTypes from 'prop-types';
+
 const RoomCard = memo(({ onPress, title, children, btnType }) => {
   const BTN_MAPPER = {
     plus: <Plus />,
@@ -49,5 +51,12 @@ const RoomCard = memo(({ onPress, title, children, btnType }) => {
     </View>
   );
 });
+
+RoomCard.propTypes = {
+  onPress: PropTypes.func.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node,
+  btnType: PropTypes.string,
+};
 
 export { RoomCard };

@@ -12,7 +12,13 @@ const App = () => {
   return (
     <ContextProviderManager>
       <LinearGradient
-        colors={['#ECFEDC', '#E5EFFA', '#E5EFFA', Colors.white, '#ECFEDC']}
+        colors={[
+          Colors.primaryLight,
+          Colors.secondaryLight,
+          Colors.secondaryLight,
+          Colors.white,
+          Colors.primaryLight,
+        ]}
         start={{ x: 1.2, y: 0.7 }}
         end={{ x: 0.7, y: 0 }}
         style={styles.linearGradient}>
