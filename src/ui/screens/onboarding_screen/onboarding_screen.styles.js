@@ -9,6 +9,7 @@ export default StyleSheet.create({
     flex: 1,
     paddingTop: 60,
     paddingLeft: 30,
+    backgroundColor: 'transparent',
   },
   backgroundImage: {
     position: 'absolute',

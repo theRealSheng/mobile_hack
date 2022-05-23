@@ -22,87 +22,75 @@ const OnboardingScreenView = memo(() => {
   const [newRoomData, setNewRoomData] = useState({});
 
   return (
-    <LinearGradient
-      colors={[
-        Colors.primaryLight,
-        Colors.secondaryLight,
-        Colors.secondaryLight,
-        Colors.white,
-        Colors.primaryLight,
-      ]}
-      start={{ x: 1.2, y: 0.7 }}
-      end={{ x: 0.7, y: 0 }}
-      style={styles.linearGradient}>
-      <View style={styles.container}>
-        <TrapezoidModal
-          isOpen={isOpenModal}
-          title={'Create room'}
-          hasBackBtn={true}
-          onClose={() => setIsOpenModal(false)}>
-          <View style={styles.createRoomInputsContainer}>
-            <InputText
-              onChange={value =>
-                setNewRoomData({ ...newRoomData, roomName: value })
-              }
-              value={newRoomData.roomName}
-              placeholder="Choose a name for the room"
-            />
-            <InputText
-              onChange={value =>
-                setNewRoomData({ ...newRoomData, name: value })
-              }
-              value={newRoomData.name}
-              placeholder="Enter your name"
-            />
-            <InputMultiSelect
-              onChange={value =>
-                setNewRoomData({ ...newRoomData, joiners: value })
-              }
-              value={newRoomData.joiners}
-              placeholder="Select a joiner"
-              options={joinersMockData}
-            />
-            <Text style={styles.selectTimeText}>Set a time for the room</Text>
-            <View style={styles.timeChipsContainer}>
-              {timeChips.map(chip => (
-                <Chip
-                  text={chip}
-                  onPress={value =>
-                    setNewRoomData({ ...newRoomData, time: value })
-                  }
-                />
-              ))}
-            </View>
+    <View style={styles.container}>
+      <TrapezoidModal
+        isOpen={isOpenModal}
+        title={'Create room'}
+        hasBackBtn={true}
+        onClose={() => setIsOpenModal(false)}>
+        <View style={styles.createRoomInputsContainer}>
+          <InputText
+            onChange={value =>
+              setNewRoomData({ ...newRoomData, roomName: value })
+            }
+            value={newRoomData.roomName}
+            placeholder="Choose a name for the room"
+          />
+          <InputText
+            onChange={value => setNewRoomData({ ...newRoomData, name: value })}
+            value={newRoomData.name}
+            placeholder="Enter your name"
+          />
+          <InputMultiSelect
+            onChange={value =>
+              setNewRoomData({ ...newRoomData, joiners: value })
+            }
+            value={newRoomData.joiners}
+            placeholder="Select a joiner"
+            options={joinersMockData}
+          />
+          <Text style={styles.selectTimeText}>Set a time for the room</Text>
+          <View style={styles.timeChipsContainer}>
+            {timeChips.map(chip => (
+              <Chip
+                key={chip.id}
+                text={chip.value}
+                onPress={value =>
+                  setNewRoomData({ ...newRoomData, time: value })
+                }
+              />
+            ))}
           </View>
-          <View style={styles.submitButtonContainer}>
-            <SquareButton
-              text="Create"
-              onPress={() => console.warn('newRoomData', newRoomData)}
-            />
-          </View>
-        </TrapezoidModal>
-        <Text style={styles.onboardingTitle}>Be the master!</Text>
-        <RoomCard
-          onPress={() => setIsOpenModal(true)}
-          title={'Create room'}
-          btnType="plus"
-        />
-        <Text style={styles.onboardingTitle}>Enjoy with others!</Text>
-        <FlatList
-          data={roomsMockData}
-          renderItem={({ item }) => (
-            <RoomCard
-              onPress={() => console.warn('id', item.id)}
-              title={item.name}
-              btnType="next">
-              <Text style={styles.roomOwner}>{item.owner}</Text>
-              <Chip text={item.time} />
-            </RoomCard>
-          )}
-          keyExtractor={item => item.id}
-        />
-      </View>
-    </LinearGradient>
+        </View>
+        <View style={styles.submitButtonContainer}>
+          <SquareButton
+            text="Create"
+            onPress={() => console.warn('newRoomData', newRoomData)}
+          />
+        </View>
+      </TrapezoidModal>
+      <Text style={styles.onboardingTitle}>Be the master!</Text>
+      <RoomCard
+        onPress={() => setIsOpenModal(true)}
+        title={'Create room'}
+        btnType="plus"
+      />
+      <Text style={styles.onboardingTitle}>Enjoy with others!</Text>
+      <FlatList
+        data={roomsMockData}
+        renderItem={({ item }) => (
+          <RoomCard
+            onPress={() => console.warn('id', item.id)}
+            title={item.name}
+            key={item.id}
+            btnType="next">
+            <Text style={styles.roomOwner}>{item.owner}</Text>
+            <Chip text={item.time} />
+          </RoomCard>
+        )}
+        keyExtractor={item => item.id}
+      />
+    </View>
   );
 });
 

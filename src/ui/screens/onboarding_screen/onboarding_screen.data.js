@@ -46,6 +46,12 @@ const joinersMockData = [
   },
 ];
 
-const timeChips = ['30 sec.', '1 min.', '1,5 min.', '2 min.'];
+const timeChips = [
+  { id: '1', value: '30 sec.' },
+  { id: '2', value: '1 min.' },
+  { id: '3', value: '1,5 min.' },
+  { id: '4', value: '2 min.' },
+  ,
+];
 
 export { roomsMockData, joinersMockData, timeChips };

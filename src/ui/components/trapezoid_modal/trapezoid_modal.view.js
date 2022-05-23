@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, Modal, TouchableOpacity, Text } from 'react-native';
+import { View, Modal, TouchableOpacity, Text, ScrollView } from 'react-native';
 import BackArrow from '../../../../assets/svg/back_arrow.svg';
 
 import { styles } from './trapezoid_modal.styles';

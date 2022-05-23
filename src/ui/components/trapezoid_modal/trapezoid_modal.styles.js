@@ -3,13 +3,13 @@ import { Colors, Size } from 'ui/styles';
 
 export const styles = StyleSheet.create({
   offsetContainer: {
-    height: '20%',
+    height: 140,
   },
   rotateContainer: {
     backgroundColor: Colors.white,
     borderTopLeftRadius: 50,
     borderTopRightRadius: 20,
-    height: '20%',
+    height: 180,
   },
   contentContainer: {
     backgroundColor: Colors.white,
