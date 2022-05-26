@@ -11,4 +11,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  squareButton: {
+    backgroundColor: Colors.primary,
+    alignItems: 'center',
+    padding: 10,
+  },
 });

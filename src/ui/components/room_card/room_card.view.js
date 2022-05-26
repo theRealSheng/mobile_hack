@@ -5,7 +5,7 @@ import Person2 from '../../../../assets/svg/person_2.svg';
 import Person3 from '../../../../assets/svg/person_3.svg';
 import Person4 from '../../../../assets/svg/person_4.svg';
 
-import { RoundedButton } from '../buttons/rounded_button/rounded_button.view';
+import { ButtonChildren } from '../buttons/button_children/button_children.view';
 import styles from './room_card.styles';
 import Plus from '../../../../assets/svg/plus.svg';
 import NextArrow from '../../../../assets/svg/next_arrow.svg';
@@ -41,9 +41,9 @@ const RoomCard = memo(({ onPress, title, children, btnType }) => {
           {children}
           {btnType && (
             <View style={styles.buttonContainer}>
-              <RoundedButton onPress={onPress}>
+              <ButtonChildren onPress={onPress} type="rounded">
                 {BTN_MAPPER[btnType]}
-              </RoundedButton>
+              </ButtonChildren>
             </View>
           )}
         </View>

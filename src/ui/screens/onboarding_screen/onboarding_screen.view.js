@@ -5,7 +5,7 @@ import { RoomCard } from '../../components/room_card';
 import { Chip } from '../../components/chip';
 import { InputText } from '../../components/inputs/input_text';
 import { InputMultiSelect } from '../../components/inputs/input_multi_select';
-import { SquareButton } from '../../components/buttons/square_button';
+import { ButtonText } from '../../components/buttons/button_text';
 import LinearGradient from 'react-native-linear-gradient';
 import { Colors } from 'ui/styles';
 
@@ -63,7 +63,7 @@ const OnboardingScreenView = memo(() => {
           </View>
         </View>
         <View style={styles.submitButtonContainer}>
-          <SquareButton
+          <ButtonText
             text="Create"
             onPress={() => console.warn('newRoomData', newRoomData)}
           />

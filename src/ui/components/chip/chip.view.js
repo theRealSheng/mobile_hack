@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
+import { ButtonChildren } from '../buttons/button_children';
 import PropTypes from 'prop-types';
 
 import styles from './chip.styles';
@@ -7,17 +8,16 @@ import styles from './chip.styles';
 const Chip = memo(({ text, onPress }) => {
   if (onPress) {
     return (
-      <TouchableOpacity onPress={() => onPress(text)} style={styles.chip}>
+      <ButtonChildren onPress={() => onPress(text)} btnStyle={styles.chip}>
         <Text style={styles.chipText}>{text}</Text>
-      </TouchableOpacity>
-    );
-  } else {
-    return (
-      <View style={styles.chip}>
-        <Text style={styles.chipText}>{text}</Text>
-      </View>
+      </ButtonChildren>
     );
   }
+  return (
+    <View style={styles.chip}>
+      <Text style={styles.chipText}>{text}</Text>
+    </View>
+  );
 });
 
 Chip.propTypes = {
