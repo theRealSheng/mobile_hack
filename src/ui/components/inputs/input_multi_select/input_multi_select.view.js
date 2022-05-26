@@ -35,7 +35,7 @@ const InputMultiSelect = memo(({ onChange, value, placeholder, options }) => {
 
 InputMultiSelect.propTypes = {
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   placeholder: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({

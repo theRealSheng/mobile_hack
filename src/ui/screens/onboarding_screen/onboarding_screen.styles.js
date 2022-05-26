@@ -2,25 +2,11 @@ import { StyleSheet } from 'react-native';
 import { Size } from 'ui/styles';
 
 export default StyleSheet.create({
-  linearGradient: {
-    flex: 1,
-  },
   container: {
     flex: 1,
     paddingTop: 60,
     paddingLeft: 30,
     backgroundColor: 'transparent',
-  },
-  backgroundImage: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
   },
   onboardingTitle: {
     fontSize: Size.xxl,
@@ -31,6 +17,20 @@ export default StyleSheet.create({
     marginTop: 5,
     marginBottom: 10,
   },
+
+  //modal content styles
+
+  backArrowButton: {
+    position: 'absolute',
+    top: -70,
+    left: 60,
+  },
+  modalTitle: {
+    fontSize: Size.xxl,
+    marginBottom: 20,
+    textAlign: 'center',
+    fontFamily: 'RobotoSlab-Medium',
+  },
   selectTimeText: {
     marginBottom: 20,
   },
@@ -40,5 +40,15 @@ export default StyleSheet.create({
   },
   submitButtonContainer: {
     marginTop: 40,
+  },
+
+  overlay: {
+    position: 'absolute',
+    zIndex: 1,
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
 });

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Colors, Size } from 'ui/styles';
+import { Colors } from 'ui/styles';
 
 export const styles = StyleSheet.create({
   offsetContainer: {
@@ -18,25 +18,5 @@ export const styles = StyleSheet.create({
     top: -80,
     paddingRight: 50,
     paddingLeft: 50,
-  },
-  backArrowButton: {
-    position: 'absolute',
-    top: -70,
-    left: 60,
-  },
-  modalTitle: {
-    fontSize: Size.xxl,
-    marginBottom: 20,
-    textAlign: 'center',
-    fontFamily: 'RobotoSlab-Medium',
-  },
-  overlay: {
-    position: 'absolute',
-    zIndex: 1,
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: 'rgba(0,0,0,0.5)',
   },
 });

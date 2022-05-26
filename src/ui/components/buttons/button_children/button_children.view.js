@@ -10,7 +10,6 @@ const BUTTON_STYLES = {
 };
 
 const ButtonChildren = memo(({ onPress, children, type, btnStyle }) => {
-  console.warn('btnStyles', btnStyle);
   return (
     <TouchableOpacity
       style={BUTTON_STYLES[type] || btnStyle || {}}
@@ -23,7 +22,7 @@ const ButtonChildren = memo(({ onPress, children, type, btnStyle }) => {
 ButtonChildren.propTypes = {
   onPress: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   btnStyles: PropTypes.object,
 };
 

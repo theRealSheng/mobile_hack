@@ -20,9 +20,9 @@ const InputText = memo(
 
 InputText.propTypes = {
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   placeholder: PropTypes.string,
-  keyboardType: PropTypes.string.isRequired,
+  keyboardType: PropTypes.string,
 };
 
 export { InputText };
