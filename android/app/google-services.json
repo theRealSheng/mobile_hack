@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "457775990516",
+    "project_id": "whoiswho-bf5f0",
+    "storage_bucket": "whoiswho-bf5f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457775990516:android:f276d4e0d114921fa500a1",
+        "android_client_info": {
+          "package_name": "com.whoiswho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457775990516-1usdejpnkionu7p0bj93mli8upocdq80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-cVGGwsDo_NPFoYoQTijUK946TS5Gqa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457775990516-1usdejpnkionu7p0bj93mli8upocdq80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
