@@ -7,13 +7,14 @@ import { screenOptions } from './config/screen_options';
 const { Navigator, Screen } = createNativeStackNavigator();
 
 import { AuthStack } from 'ui/navigation/stacks/auth.stack';
-import { GameScreen } from 'ui/screens/game_screen';
+import { AppStack } from 'ui/navigation/stacks/app.stack';
 
 const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Navigator screenOptions={screenOptions}>
-        <Screen name="OnBoarding" component={GameScreen} />
+        <Screen name="App" component={AppStack} />
+        <Screen name="Auth" component={AuthStack} />
       </Navigator>
     </NavigationContainer>
   );

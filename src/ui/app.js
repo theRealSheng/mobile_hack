@@ -14,8 +14,8 @@ const App = () => {
         colors={[
           Colors.primaryLight,
           Colors.secondaryLight,
-          Colors.primaryLight,
-          Colors.primaryLight,
+          Colors.secondaryLight,
+          Colors.white,
           Colors.primaryLight,
         ]}
         start={{ x: 1.2, y: 0.7 }}

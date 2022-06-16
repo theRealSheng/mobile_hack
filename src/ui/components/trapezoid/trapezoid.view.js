@@ -28,7 +28,7 @@ const Trapezoid = memo(
 Trapezoid.propTypes = {
   children: PropTypes.node,
   iconZIndex: PropTypes.number,
-  PersonIcon: PropTypes.element,
+  PersonIcon: PropTypes.func,
   iconHeight: PropTypes.number,
   iconWidth: PropTypes.number,
 };
