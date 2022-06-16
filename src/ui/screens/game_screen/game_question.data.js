@@ -16,9 +16,6 @@ import PersonIcon12 from 'ui/assets/icons/person_12.svg';
 import PersonIcon13 from 'ui/assets/icons/person_13.svg';
 import PersonIcon14 from 'ui/assets/icons/person_14.svg';
 
-const { height, width } = Dimensions.get('window');
-//844
-//390
 const OnBoardingData = [
   {
     question: 'In which country were you born?',

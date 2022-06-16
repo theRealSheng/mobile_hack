@@ -8,7 +8,7 @@ import styles from './checkbox_input.styles';
 const CheckboxInput = memo(({ options, multiple = false, onSelect }) => {
   const [selected, setSelected] = useState({});
 
-  const onValueChange =(id, isSelected) => {
+  const onValueChange = (id, isSelected) => {
     const newIsSelected = !multiple ? {} : { ...selected };
     newIsSelected[id] = isSelected;
     setSelected(newIsSelected);
@@ -38,11 +38,13 @@ const CheckboxInput = memo(({ options, multiple = false, onSelect }) => {
 });
 
 CheckboxInput.propTypes = {
-  options: PropTypes.arrayOf({
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string,
-    value: PropTypes.string,
-  }).isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string,
+      value: PropTypes.string,
+    }).isRequired,
+  ),
   multiple: PropTypes.bool,
   onSelect: PropTypes.func,
 };

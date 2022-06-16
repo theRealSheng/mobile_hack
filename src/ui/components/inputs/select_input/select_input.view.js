@@ -42,13 +42,15 @@ const SelectInput = memo(({ options, multiple = false, onSelect }) => {
 });
 
 SelectInput.propTypes = {
-  options: PropTypes.arrayOf({
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string,
-    value: PropTypes.string,
-  }).isRequired,
-  multiple: PropTypes.boolean,
-  onSelect: PropTypes.function,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string,
+      value: PropTypes.string,
+    }).isRequired,
+  ),
+  multiple: PropTypes.bool,
+  onSelect: PropTypes.func,
 };
 
 export { SelectInput };

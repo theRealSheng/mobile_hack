@@ -9,7 +9,7 @@ import { SelectInput } from '../../components/inputs/select_input';
 import { InputText } from '../../components/inputs/text_input';
 import { NextButton } from '../../components/buttons/next_button';
 
-import styles from './game_question.styles';
+import styles from './game_screen.styles';
 
 import { OnBoardingData } from './game_question.data';
 
@@ -73,7 +73,7 @@ const GameScreenView = memo(({ }) => {
           {ComponentInput && (
             <ComponentInput
               multiple={multiple}
-              options={options}
+              { ...(!options?.length ? {} : { options }) }
               onSelect={onResponseQuestion} />
           )}
         </ScrollView>
