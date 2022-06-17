@@ -1,5 +1,7 @@
 import React, { memo, useState } from 'react';
 import { View, Text, FlatList, Modal } from 'react-native';
+
+import { useNavigation } from '@react-navigation/native';
 import { Trapezoid } from '../../components/trapezoid';
 import { RoomCard } from '../../components/room_card';
 import { Chip } from '../../components/chip';
@@ -22,6 +24,7 @@ const OnboardingScreenView = memo(() => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const onToggleModal = () => setIsOpenModal(!isOpenModal);
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -32,7 +35,7 @@ const OnboardingScreenView = memo(() => {
         data={roomsMockData}
         renderItem={({ item }) => (
           <RoomCard
-            onPress={() => console.warn('id', item.id)}
+            onPress={() => navigation.navigate('GameScreen', { params: { gameId: item.id } })}
             title={item.name}
             key={item.id}
             btnType="next">

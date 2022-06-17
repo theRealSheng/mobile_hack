@@ -6,6 +6,7 @@ const Size = {
   l: 15,
   xl: 20,
   xxl: 30,
+  xxxl: 40,
 };
 
 export { Size };

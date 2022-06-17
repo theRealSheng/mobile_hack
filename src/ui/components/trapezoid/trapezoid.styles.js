@@ -1,22 +1,37 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from 'ui/styles';
+import { Colors, Space } from 'ui/styles';
 
 export const styles = StyleSheet.create({
+  container: {
+    position: 'relative',
+    flex: 1,
+  },
   offsetContainer: {
-    height: 140,
+    height: '100%',
+    width: '100%',
+    position: 'relative'
   },
   rotateContainer: {
     backgroundColor: Colors.white,
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 20,
-    height: 180,
+    borderRadius: 50,
+    height: '92.5%',
+    width: '100%',
+    position: 'absolute',
+    bottom: Space.lg,
+    transform: [{ skewY: '20deg' }, { translateY: 80 }],
   },
   contentContainer: {
     backgroundColor: Colors.white,
     height: '70%',
-    position: 'relative',
-    top: -80,
-    paddingRight: 50,
-    paddingLeft: 50,
+    position: 'absolute',
+    bottom: 0,
+    paddingRight: Space.md,
+    paddingLeft: Space.md,
+    width: '100%',
+  },
+  personIcon:{
+    position: 'absolute',
+    top: -Space.md,
+    right: Space.md,
   },
 });
