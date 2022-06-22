@@ -7,15 +7,29 @@ const api = axios.create({
 });
 
 const RestApiNetwork = {
-  _getHeaders: () => {
-    let headers = AppConfig.defaultHeaders;
-    headers = { ...headers, ...AppConfig.authHeaders() };
-    return headers;
+  _getHeaders: async () => {
+    const headers = AppConfig.defaultHeaders;
+    const authHeader = await AppConfig.authHeaders();
+    return { ...headers, ...authHeader };
   },
-  get: (url, params = {}) => api.get(url, params),
-  post: (url, body) => api.post(url, body),
-  put: (url, body) => api.put(url, body),
-  patch: (url, body) => api.patch(url, body),
+  get: async (url, params = {}) => {
+    const headers = await RestApiNetwork._getHeaders();
+    return api.get(url, {
+      ...params,
+      headers,
+    });
+  },
+  post: async (url, body) => {
+    const headers = await RestApiNetwork._getHeaders();
+    return api.post(url, {
+      body,
+      headers,
+    });
+  },
+  put: async (url, body) => {
+    const headers = await RestApiNetwork._getHeaders();
+    return api.put(url, body, headers);
+  },
 };
 
 export { RestApiNetwork };

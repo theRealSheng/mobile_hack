@@ -1,5 +1,5 @@
 const DebugConfig = {
-  selectedServer: 'local',
+  selectedServer: 'dev',
 };
 
 export { DebugConfig };
