@@ -46,7 +46,7 @@ The project follows a clean domain/ hexagonal structure. Please see below for mo
           - network
             - rest_api.network => (Axios REST Api)
             - socket.network => (Socket IO)
-      - core => (Domain connections between UI and network in Common/netowrk)
+      - core => (Domain connections between UI and rest_api network)
           - user
             - models
             - repositoties
@@ -61,6 +61,6 @@ The project follows a clean domain/ hexagonal structure. Please see below for mo
           - hoc => (Higher order components)
           - navigation
           - screens
-          - services
+          - services 
           - store => (Using React Context for centralized data storage)
           - styles
