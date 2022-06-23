@@ -65,7 +65,6 @@ The project follows a clean domain/ hexagonal structure. Please see below for mo
       - ui
           - assets
           - components
-          - hoc => (Higher order components)
           - navigation
           - screens
           - services 
