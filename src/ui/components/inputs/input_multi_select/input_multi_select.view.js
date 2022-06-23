@@ -25,10 +25,7 @@ const InputMultiSelect = memo(({ onChange, value, placeholder, options }) => {
         selectedItemIconColor="black"
         hideSubmitButton={true}
       />
-      <View>
-        {multiSelectRef.current &&
-          multiSelectRef.current.getSelectedItemsExt(value)}
-      </View>
+      <View>{multiSelectRef.current && multiSelectRef.current.getSelectedItemsExt(value)}</View>
     </View>
   );
 });

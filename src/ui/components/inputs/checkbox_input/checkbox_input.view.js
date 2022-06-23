@@ -20,21 +20,14 @@ const CheckboxInput = memo(({ options, multiple = false, onSelect }) => {
       const { id, label } = item;
       return (
         <View style={styles.option} key={id}>
-          <CheckBox
-            value={selected[id] || false}
-            onValueChange={isSelected => onValueChange(id, isSelected)}
-          />
+          <CheckBox value={selected[id] || false} onValueChange={isSelected => onValueChange(id, isSelected)} />
           <Text style={styles.label}>{label}</Text>
         </View>
-      )
-    })
+      );
+    });
   };
 
-  return (
-    <View>
-      {renderOptions()}
-    </View>
-  )
+  return <View>{renderOptions()}</View>;
 });
 
 CheckboxInput.propTypes = {

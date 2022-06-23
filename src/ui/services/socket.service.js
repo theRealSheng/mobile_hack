@@ -10,6 +10,6 @@ class SocketService {
   emit(event, data) {
     this.socket.emit(event, data);
   }
-};
+}
 
 export { SocketService };

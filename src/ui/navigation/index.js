@@ -13,8 +13,8 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Navigator screenOptions={screenOptions}>
-        <Screen name="Auth" component={AuthStack} />
         <Screen name="App" component={AppStack} />
+        <Screen name="Auth" component={AuthStack} />
       </Navigator>
     </NavigationContainer>
   );

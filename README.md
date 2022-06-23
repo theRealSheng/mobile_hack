@@ -1,4 +1,4 @@
-# React Native DCSL Hackathon 2022
+# DCSL Hackathon 2022
 
 # Environment Set Up
 Please following the instructions at the following url:
@@ -25,12 +25,19 @@ Requirement:
 ## Android
   Run the following command at project level
 
-    yarn/npm android
+    yarn android
 
+  or
+
+    npm run android
 ## Ios
     Run the following command at project level
 
-    yarn/npm ios
+    yarn ios
+
+  or
+
+    npm run ios
 
 if either command fails to run, please open Xcode/Android studio and run the app from the OS IDE.
 

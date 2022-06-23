@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { AppConfig } from 'common/config/app_config';
 
+import { LocalStorageService } from 'ui/services/local_storage.service';
+
 const api = axios.create({
   baseURL: AppConfig.host(),
   timeout: 60000,
@@ -9,7 +11,10 @@ const api = axios.create({
 const RestApiNetwork = {
   _getHeaders: async () => {
     const headers = AppConfig.defaultHeaders;
-    const authHeader = await AppConfig.authHeaders();
+    const token = await LocalStorageService.getItem('token');
+    const authHeader = {
+      ...(!token ? {} : { Authorization: token }),
+    };
     return { ...headers, ...authHeader };
   },
   get: async (url, params = {}) => {

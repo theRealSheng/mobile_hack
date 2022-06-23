@@ -14,7 +14,7 @@ export default StyleSheet.create({
     fontFamily: '../../assets/fonts/RobotoSlab-Medium.tff',
   },
   buttonContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginBottom: Space.md,
   },
   optionsWrapper: {
@@ -50,7 +50,7 @@ export default StyleSheet.create({
     borderColor: 'black',
     visibility: 'hidden',
   },
-  topText:{
+  topText: {
     fontSize: Size.xl,
     fontFamily: '../../assets/fonts/RobotoSlab-Thin.tff',
     fontWeight: '200',
@@ -58,25 +58,25 @@ export default StyleSheet.create({
   topViewContainer: {
     flex: 1,
   },
-  roundedBorder:{
+  roundedBorder: {
     borderWidth: 1.3,
     borderRadius: 60 / 2,
     borderColor: 'black',
     padding: 5,
     width: Space.sm * 3,
-    alignItems: 'center'
+    alignItems: 'center',
   },
-  textView:{
-    flexDirection: "row",
-    flexWrap: "wrap",
-    marginTop: Space.sm
+  textView: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: Space.sm,
   },
-  innerTextView:{
-    padding: Space.xs
+  innerTextView: {
+    padding: Space.xs,
   },
-  topView:{
+  topView: {
     paddingTop: Space.md,
     paddingLeft: Space.md * 2,
     position: 'relative',
-  }
+  },
 });

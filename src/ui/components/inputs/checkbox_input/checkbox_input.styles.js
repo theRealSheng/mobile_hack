@@ -10,6 +10,6 @@ export default StyleSheet.create({
   },
   label: {
     marginLeft: Space.xs,
-    fontSize: Size.xl
+    fontSize: Size.xl,
   },
 });

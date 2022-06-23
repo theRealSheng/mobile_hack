@@ -3,8 +3,6 @@ import DeviceInfo from 'react-native-device-info';
 
 import { DebugConfig } from './debug_config';
 
-import { LocalStorageService } from 'ui/services/local_storage.service';
-
 const { width, height } = Dimensions.get('window');
 
 const AppConfig = {
@@ -19,14 +17,11 @@ const AppConfig = {
       public: 'http://localhost:4010/',
     },
   },
-  authHeaders: async () => {
-    const token = await LocalStorageService.getItem('token');
-    if (token) {
-      return {
-        Authorization: token,
-      };
-    }
-    return {};
+  host: () => {
+    return AppConfig.servers[AppConfig.selectedServer].api;
+  },
+  hostPublic: () => {
+    return AppConfig.servers[AppConfig.selectedServer].public;
   },
   width,
   height,

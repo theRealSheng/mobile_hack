@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Person1 from '../../assets/svg/person_1.svg';
-import Person2 from '../../assets/svg/person_2.svg';
-import Person3 from '../../assets/svg/person_3.svg';
-import Person4 from '../../assets/svg/person_4.svg';
-import Person5 from '../../assets/svg/person_4.svg';
+import Person1 from 'ui/assets/svg/person_1.svg';
+import Person2 from 'ui/assets/svg/person_2.svg';
+import Person3 from 'ui/assets/svg/person_3.svg';
+import Person4 from 'ui/assets/svg/person_4.svg';
+import Person5 from 'ui/assets/svg/person_4.svg';
 
 const PEOPLE_MAPPER = [
   <Person1 width={100} />,

@@ -7,6 +7,7 @@ const Colors = {
   white: 'white',
   error: 'red',
   success: 'green',
+  gray: `rgba(0, 0, 0, 0.3)`,
 };
 
 export { Colors };

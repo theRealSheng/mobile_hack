@@ -21,24 +21,20 @@ const SelectInput = memo(({ options, multiple = false, onSelect }) => {
     return (
       <View style={Platform.OS === 'ios' ? styles.inputIOS : styles.inputAndroid}>
         <RNPickerSelect
-          placeholder={{ label: "Select an item from the list", value: null }}
+          placeholder={{ label: 'Select an item from the list', value: null }}
           onValueChange={(_, id) => onValueChange(id)}
           items={options}
           style={{
-            ...(styles.input),
+            ...styles.input,
             iconContainer: styles.iconContainer,
           }}
           Icon={() => <SelectIcon width={40} heigth={40} />}
         />
       </View>
-    )
+    );
   };
 
-  return (
-    <View>
-      {renderOptions()}
-    </View>
-  )
+  return <View>{renderOptions()}</View>;
 });
 
 SelectInput.propTypes = {

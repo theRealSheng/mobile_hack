@@ -4,6 +4,6 @@ const Space = {
   md: 20,
   lg: 50,
   xl: 80,
-}
+};
 
 export { Space };

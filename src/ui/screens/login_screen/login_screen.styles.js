@@ -1,30 +1,34 @@
 import { StyleSheet } from 'react-native';
-import { Size } from 'ui/styles';
+import { Size, Space, Colors } from 'ui/styles';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
   },
-  overlay: {
+  icon: {
     position: 'absolute',
-    zIndex: -1,
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    right: Space.md,
+    top: Space.lg,
+    zIndex: 1000,
   },
   loginTitle: {
     fontSize: Size.xxl,
-    marginBottom: 20,
+    marginBottom: Space.sm,
     textAlign: 'center',
     fontFamily: 'RobotoSlab-Medium',
   },
   loginSubtitle: {
     textAlign: 'center',
-    marginBottom: 40,
+    marginBottom: Space.md,
   },
   loginContentContainer: {
     padding: 20,
+  },
+  input: {
+    marginBottom: Space.md,
+  },
+  errorMessage: {
+    color: Colors.error,
+    marginBottom: Space.sm,
   },
 });

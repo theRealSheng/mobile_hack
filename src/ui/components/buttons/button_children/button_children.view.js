@@ -11,9 +11,7 @@ const BUTTON_STYLES = {
 
 const ButtonChildren = memo(({ onPress, children, type, btnStyle }) => {
   return (
-    <TouchableOpacity
-      style={BUTTON_STYLES[type] || btnStyle || {}}
-      onPress={onPress}>
+    <TouchableOpacity style={BUTTON_STYLES[type] || btnStyle || {}} onPress={onPress}>
       {children}
     </TouchableOpacity>
   );
