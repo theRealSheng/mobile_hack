@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Colors, Size } from 'ui/styles';
+import { Colors, Size, Space } from 'ui/styles';
 
 export default StyleSheet.create({
   roomBlock: {
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     borderStyle: 'solid',
     position: 'relative',
     borderRadius: 10,
-    shadowColor: "#000000",
+    shadowColor: Colors.black,
     shadowOpacity: 0.8,
     shadowRadius: 2,
     shadowOffset: {
@@ -42,6 +42,7 @@ export default StyleSheet.create({
     height: 140,
     width: 170,
     position: 'absolute',
+    paddingLeft: Space.md,
   },
   cardTitle: {
     fontSize: Size.xl,
@@ -49,7 +50,7 @@ export default StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    right: 20,
-    top: 50,
+    right: Space.md,
+    top: Space.lg,
   },
 });

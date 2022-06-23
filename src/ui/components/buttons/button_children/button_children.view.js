@@ -7,6 +7,7 @@ import styles from './button_children.styles';
 const BUTTON_STYLES = {
   rounded: styles.roundedButton,
   square: styles.squareButton,
+  textRound: styles.textRound,
 };
 
 const ButtonChildren = memo(({ onPress, children, type, btnStyle }) => {

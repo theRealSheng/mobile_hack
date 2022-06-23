@@ -4,10 +4,10 @@ import { ButtonChildren } from '../button_children';
 import styles from './button_text.style';
 import { Text } from 'react-native';
 
-const ButtonText = memo(({ onPress, text, type = 'square' }) => {
+const ButtonText = memo(({ onPress, text, type = 'square', textStyle = null }) => {
   return (
     <ButtonChildren type={type} onPress={onPress}>
-      <Text style={styles.buttonText}>{text.toUpperCase()}</Text>
+      <Text style={textStyle || styles.buttonText}>{text.toUpperCase()}</Text>
     </ButtonChildren>
   );
 });
