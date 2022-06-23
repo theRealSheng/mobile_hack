@@ -1,5 +1,4 @@
 import React, { memo, useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import { View, Text, ScrollView } from 'react-native';
 
 import { Trapezoid } from '../../components/trapezoid';
@@ -12,6 +11,8 @@ import styles from './game_screen.styles';
 
 import { OnBoardingData } from './game_question.data';
 
+import { useGame } from './hook/use_game_hook';
+
 const initialState = {
   0: null,
 };
@@ -23,68 +24,27 @@ const InputTypesDic = {
 };
 
 const GameScreenView = memo(({}) => {
-  const [question, setQuestion] = useState(0);
-  const [answers, setAnswers] = useState(initialState);
-
-  const {
-    question: questionToAsk,
-    multiple,
-    type,
-    options,
-    icon_zIndex: iconZIndex,
-    icon,
-    iconHeight,
-    iconWidth,
-  } = OnBoardingData[question];
-
-  const onResponseQuestion = useCallback(
-    res => {
-      setAnswers({ ...answers, [question]: res });
-    },
-    [question],
-  );
-
-  const onClickNextQuestion = useCallback(() => {
-    setQuestion(question + 1);
-  }, [question]);
-
-  const onClickPreviousQuestion = useCallback(() => {
-    setQuestion(question - 1);
-  }, [question]);
-
-  const ComponentInput = InputTypesDic[type];
+  const { game, questionIndex, onClickNextQuestion, onClickPreviousQuestion } = useGame();
 
   return (
     <View style={styles.container}>
       <View style={styles.topView}>
-        <View>
-          <Text style={styles.topText}>
-            Few questions before{'\n'}
-            we start...
-          </Text>
-        </View>
         <View style={styles.textView}>
           <View style={styles.roundedBorder}>
-            <Text>{question + 1}</Text>
+            <Text>{questionIndex + 1}</Text>
           </View>
           <View style={styles.innerTextView}>
             <Text>of {OnBoardingData.length}</Text>
           </View>
         </View>
       </View>
-      <Trapezoid PersonIcon={icon} iconZIndex={iconZIndex} iconHeight={iconHeight} iconWidth={iconWidth}>
-        <Text style={styles.questionText}>{questionToAsk}</Text>
+      <Trapezoid>
+        {/* <Text style={styles.questionText}>{questionToAsk}</Text> */}
         <ScrollView style={styles.optionsWrapper}>
-          {ComponentInput && (
-            <ComponentInput
-              multiple={multiple}
-              {...(!options?.length ? {} : { options })}
-              onSelect={onResponseQuestion}
-            />
-          )}
+
         </ScrollView>
         <View style={styles.buttonContainer}>
-          {question !== 0 && (
+          {questionIndex !== 0 && (
             <NextButton text="Previous" onPress={onClickPreviousQuestion} style={styles.buttonPrevious} />
           )}
           <NextButton text="Next" onPress={onClickNextQuestion} style={styles.buttonNext} />

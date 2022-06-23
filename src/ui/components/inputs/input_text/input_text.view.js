@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import styles from './input_text.styles';
 
-const InputText = memo(({ onChange, value, placeholder, keyboardType = 'default' }) => {
+const InputText = memo(({ onChange, value, placeholder, keyboardType = 'default', inputStyle = {} }) => {
   return (
     <TextInput
-      style={styles.input}
+      style={[styles.input, inputStyle]}
       onChangeText={onChange}
       value={value}
       placeholder={placeholder}

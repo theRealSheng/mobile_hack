@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Size } from 'ui/styles';
+import { Size, Space } from 'ui/styles';
 
 export default StyleSheet.create({
   container: {
@@ -21,7 +21,13 @@ export default StyleSheet.create({
   backArrowButton: {
     position: 'absolute',
     top: -70,
-    left: 60,
+    left: 30,
+  },
+  scrollView: {
+    flex: 1,
+  },
+  input: {
+    marginBottom: Space.lg,
   },
   modalTitle: {
     fontSize: Size.xxl,

@@ -35,6 +35,8 @@ const AuthContexProvider = ({ children }) => {
       if (loginRes.status === STATUS_CODES.STATUS_OK) {
         const { data } = loginRes.data;
         LocalStorageService.setItem('token', data);
+        //@TODO - Check if onboarding is done.
+        // If on boarding done - route to Main Screen, otherwise onboarding..
       }
     } catch (e) {
       console.warn('AuthContexProvider/onLogin:', e);
