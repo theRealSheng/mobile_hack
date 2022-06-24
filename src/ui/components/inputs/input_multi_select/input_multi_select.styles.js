@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
+import { Space } from 'ui/styles';
 
 export default StyleSheet.create({
   multipleSelect: {
-    marginBottom: 20,
+    marginBottom: Space.md,
   },
 });

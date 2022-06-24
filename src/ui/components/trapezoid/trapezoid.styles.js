@@ -13,12 +13,12 @@ export const styles = StyleSheet.create({
   },
   rotateContainer: {
     backgroundColor: Colors.white,
-    borderRadius: 50,
+    borderRadius: Space.lg,
     height: '92.5%',
     width: '100%',
     position: 'absolute',
     bottom: Space.lg,
-    transform: [{ skewY: '20deg' }, { translateY: 80 }],
+    transform: [{ skewY: '20deg' }, { translateY: Space.xl }],
   },
   contentContainer: {
     backgroundColor: Colors.white,

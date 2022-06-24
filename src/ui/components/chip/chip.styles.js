@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from 'ui/styles';
+import { Colors, Space } from 'ui/styles';
 
 export default StyleSheet.create({
   chip: {
     backgroundColor: Colors.primaryLight,
-    padding: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-    marginBottom: 5,
-    borderRadius: 20,
+    padding: Space.xs,
+    paddingLeft: Space.sm,
+    paddingRight: Space.sm,
+    marginBottom: Space.xs,
+    borderRadius: Space.md,
     alignSelf: 'flex-start',
   },
 });

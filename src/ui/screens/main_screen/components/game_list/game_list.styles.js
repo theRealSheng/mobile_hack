@@ -11,12 +11,12 @@ export default StyleSheet.create({
   },
   onboardingTitle: {
     fontSize: Size.xxl,
-    marginBottom: 20,
+    marginBottom: Space.md,
     fontFamily: 'RobotoSlab-Medium',
   },
   roomOwner: {
     marginTop: 5,
-    marginBottom: 10,
+    marginBottom: Space.sm,
   },
   backArrowButton: {
     position: 'absolute',
@@ -31,12 +31,12 @@ export default StyleSheet.create({
   },
   modalTitle: {
     fontSize: Size.xxl,
-    marginBottom: 20,
+    marginBottom: Space.md,
     textAlign: 'center',
     fontFamily: 'RobotoSlab-Medium',
   },
   selectTimeText: {
-    marginBottom: 20,
+    marginBottom: Space.md,
   },
   timeChipsContainer: {
     flexDirection: 'row',

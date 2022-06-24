@@ -26,7 +26,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     padding: Space.sm,
     width: Space.md * 6,
-    borderRadius: 5,
+    borderRadius: Space.xs,
     marginLeft: 'auto',
   },
   buttonPrevious: {
@@ -60,9 +60,9 @@ export default StyleSheet.create({
   },
   roundedBorder: {
     borderWidth: 1.3,
-    borderRadius: 60 / 2,
+    borderRadius: 30,
     borderColor: 'black',
-    padding: 5,
+    padding: Space.xs,
     width: Space.sm * 3,
     alignItems: 'center',
   },

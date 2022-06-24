@@ -11,7 +11,7 @@ export default StyleSheet.create({
   },
   heading: {
     fontSize: Size.xxl,
-    marginBottom: 20,
+    marginBottom: Space.md,
     fontFamily: 'RobotoSlab-Medium',
   },
   content: {
@@ -35,14 +35,14 @@ export default StyleSheet.create({
   rankingItem: {
     width: '100%',
     height: 0,
-    borderBottomWidth: 80,
+    borderBottomWidth: Space.xl,
     borderBottomColor: 'white',
-    borderLeftWidth: 50,
+    borderLeftWidth: Space.lg,
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
     borderStyle: 'solid',
     position: 'relative',
-    borderRadius: 10,
+    borderRadius: Space.sm,
     shadowColor: Colors.black,
     shadowOpacity: 0.8,
     shadowRadius: 2,
@@ -50,7 +50,7 @@ export default StyleSheet.create({
       height: 1,
       width: 1,
     },
-    marginRight: 5,
+    marginRight: Space.xs,
     marginBottom: Space.md,
   },
   position: {

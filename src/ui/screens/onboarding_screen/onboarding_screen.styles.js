@@ -25,15 +25,15 @@ export default StyleSheet.create({
     backgroundColor: Colors.primary,
     alignItems: 'center',
     padding: Space.sm,
-    width: Space.md * 6,
-    borderRadius: 5,
+    width: 120,
+    borderRadius: Space.xs,
     marginLeft: 'auto',
   },
   buttonPrevious: {
     backgroundColor: 'transparent',
     alignItems: 'center',
     padding: Space.sm,
-    width: Space.md * 6,
+    width: 120,
     borderRadius: 3,
     borderWidth: 1,
     borderColor: 'black',
@@ -60,10 +60,10 @@ export default StyleSheet.create({
   },
   roundedBorder: {
     borderWidth: 1.3,
-    borderRadius: 60 / 2,
+    borderRadius: 30,
     borderColor: 'black',
-    padding: 5,
-    width: Space.sm * 3,
+    padding: Space.xs,
+    width: 30,
     alignItems: 'center',
   },
   textView: {
@@ -76,7 +76,7 @@ export default StyleSheet.create({
   },
   topView: {
     paddingTop: Space.md,
-    paddingLeft: Space.md * 2,
+    paddingLeft: 40,
     position: 'relative',
   },
 });

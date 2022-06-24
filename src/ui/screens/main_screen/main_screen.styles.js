@@ -23,7 +23,7 @@ export default StyleSheet.create({
   },
   backgroundImage: {
     position: 'absolute',
-    top: -10,
+    top: -Space.sm,
   },
   selected: {},
   unselected: {

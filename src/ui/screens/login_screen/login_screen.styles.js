@@ -22,7 +22,7 @@ export default StyleSheet.create({
     marginBottom: Space.md,
   },
   loginContentContainer: {
-    padding: 20,
+    padding: Space.md,
   },
   input: {
     marginBottom: Space.md,

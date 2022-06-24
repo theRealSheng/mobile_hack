@@ -6,7 +6,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.primary,
     width: 40,
     height: 40,
-    borderRadius: 20,
+    borderRadius: Space.md,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -14,7 +14,7 @@ export default StyleSheet.create({
   squareButton: {
     backgroundColor: Colors.primary,
     alignItems: 'center',
-    padding: 10,
+    padding: Space.sm,
   },
   textRound: {
     backgroundColor: Colors.primary,
